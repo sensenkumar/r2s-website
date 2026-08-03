@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services — room2service</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-accent-bar"></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg p-0">
+      <a class="brand" href="index.html">
+        <img src="assets/logo-icon.svg" alt="room2service logo">
+        room<span class="two">2</span>service
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav site-nav align-items-lg-center py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold mt-2 mt-lg-0 ms-lg-3">Request Demo</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero-section text-center">
+  <div class="container">
+    <p class="eyebrow justify-content-center">PLATFORM MODULES</p>
+    <h1 class="display-5 text-white">Seven Modules. One Unified Platform.</h1>
+    <p class="lead mt-3 mx-auto" style="max-width:640px;">Every department in your hotel — connected, synchronized, and operating at peak efficiency from a single intelligent system.</p>
+  </div>
+</section>
+
+<!-- ===================== MODULE TABS + DETAIL ===================== -->
+<section class="section">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+      <button class="module-tab active" data-module="pos"><i class="fa-solid fa-cart-shopping"></i> Point of Sale</button>
+      <button class="module-tab" data-module="pms"><i class="fa-solid fa-building"></i> Property Management</button>
+      <button class="module-tab" data-module="rs"><i class="fa-solid fa-bell-concierge"></i> Room Service</button>
+      <button class="module-tab" data-module="fd"><i class="fa-solid fa-users"></i> Front Desk</button>
+      <button class="module-tab" data-module="ln"><i class="fa-solid fa-shirt"></i> Laundry Management</button>
+      <button class="module-tab" data-module="br"><i class="fa-solid fa-martini-glass"></i> Bar Management</button>
+      <button class="module-tab" data-module="bh"><i class="fa-solid fa-champagne-glasses"></i> Banquet Hall</button>
+    </div>
+
+    <!-- POS panel -->
+    <div class="module-panel" data-module="pos">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div class="icon-box" style="background:var(--cream);width:38px;height:38px;"><i class="fa-solid fa-cart-shopping" style="color:var(--gold-dark);"></i></div>
+            <span class="badge-tag" style="color:var(--gold-dark);position:static;float:none;font-size:.72rem;">POS</span>
+          </div>
+          <h3>Point of Sale</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Unified billing across every revenue center</p>
+          <p class="text-muted-custom">room2service POS is engineered for the complexity of hotel operations — handling multiple revenue centers, split billing, and real-time reporting without friction. From restaurant to spa to gift shop, every transaction flows through one intelligent system.</p>
+
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Multi-outlet billing</h6>
+                <p>Manage restaurant, bar, spa, and retail from a single POS interface with outlet-specific menus and pricing.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Room charge posting</h6>
+                <p>Post charges directly to guest folios with one tap — no manual reconciliation required.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Real-time reporting</h6>
+                <p>Live revenue dashboards by outlet, shift, and server — accessible from any device.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Split &amp; merge bills</h6>
+                <p>Handle complex billing scenarios including split by item, by seat, or by percentage.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Inventory sync</h6>
+                <p>Automatic stock deduction on every sale with low-inventory alerts and supplier integration.</p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-box">
+                <h6><i class="fa-solid fa-circle-check icon-circle"></i>Offline mode</h6>
+                <p>Continue operations during connectivity interruptions — all transactions sync automatically when reconnected.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Live Dashboard</div>
+            <div class="mock-activity-row" style="border-top:none;"><span>Restaurant</span><span class="float-end" style="color:#4ade80;">$4,280</span></div>
+            <div class="mock-activity-row"><span>Bar</span><span class="float-end" style="color:#4ade80;">$1,940</span></div>
+            <div class="mock-activity-row"><span>Room Service</span><span class="float-end" style="color:#4ade80;">$890</span></div>
+            <div class="row g-2 mt-2">
+              <div class="col-2"><div class="mock-module-pill">&nbsp;</div></div>
+              <div class="col-2"><div class="mock-module-pill">&nbsp;</div></div>
+              <div class="col-2"><div class="mock-module-pill">&nbsp;</div></div>
+              <div class="col-2"><div class="mock-module-pill">&nbsp;</div></div>
+              <div class="col-2"><div class="mock-module-pill">&nbsp;</div></div>
+              <div class="col-2"><div class="mock-module-pill active">&nbsp;</div></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mt-3 small text-white-50">
+              <span><i class="fa-solid fa-chevron-left"></i> Previous</span>
+              <span>1 / 7</span>
+              <span>Next <i class="fa-solid fa-chevron-right"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generic panel template reused for other modules -->
+    <div class="module-panel d-none" data-module="pms">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Property Management</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">End-to-end reservation &amp; occupancy intelligence</p>
+          <p class="text-muted-custom">A complete front-office command center — reservations, guest profiles, housekeeping status, and occupancy forecasting, all synced in real time across every property.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Reservation engine</h6><p>Manage bookings across all channels with automatic rate and availability sync.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Guest profiles</h6><p>Unified guest history, preferences, and loyalty status across every stay.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Housekeeping sync</h6><p>Room status updates flow instantly between housekeeping and front desk.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>OTA channel integration</h6><p>Two-way sync with major OTAs to prevent overbooking.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Occupancy Overview</div>
+            <div class="row g-2">
+              <div class="col-4"><div class="mock-stat"><div class="label">Occupied</div><div class="value">142/180</div></div></div>
+              <div class="col-4"><div class="mock-stat"><div class="label">Arrivals</div><div class="value">18</div></div></div>
+              <div class="col-4"><div class="mock-stat"><div class="label">Departures</div><div class="value">12</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-panel d-none" data-module="rs">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Room Service</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Digital in-room ordering, kitchen to door</p>
+          <p class="text-muted-custom">Guests order from an in-room digital menu; kitchens receive tickets instantly, and delivery is tracked from prep to door.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Digital menu ordering</h6><p>QR or in-room tablet ordering with live menu availability.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Kitchen routing</h6><p>Orders route automatically to the correct prep station.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Delivery tracking</h6><p>Live status from order placed to delivered at the door.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Folio posting</h6><p>Charges post directly to the guest's room folio.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Kitchen Queue</div>
+            <div class="mock-activity-row" style="border-top:none;">Room 204 — Club sandwich <span class="float-end text-gold">Preparing</span></div>
+            <div class="mock-activity-row">Room 118 — Continental breakfast <span class="float-end" style="color:#4ade80;">Delivered</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-panel d-none" data-module="fd">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Front Desk</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Streamlined check-in, check-out &amp; guest communication</p>
+          <p class="text-muted-custom">A single interface for check-in, check-out, room assignment, and guest messaging — cutting front desk wait times dramatically.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Express check-in/out</h6><p>Pre-registration and mobile key support for faster arrivals.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Guest messaging</h6><p>SMS and in-app messaging directly from the front desk console.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Room assignment</h6><p>Smart room assignment based on preferences and housekeeping status.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>ID &amp; payment capture</h6><p>Secure digital ID scan and payment capture at check-in.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Today's Arrivals</div>
+            <div class="mock-activity-row" style="border-top:none;">Room 118 — J. Alvarez <span class="float-end" style="color:#4ade80;">Checked in</span></div>
+            <div class="mock-activity-row">Room 305 — M. Chen <span class="float-end text-gold">Pending</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-panel d-none" data-module="ln">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Laundry Management</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Automated request and billing workflow</p>
+          <p class="text-muted-custom">From pickup request to delivery, laundry orders are tracked, billed, and reconciled automatically.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Pickup scheduling</h6><p>Guests request pickup directly from their room device.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Status tracking</h6><p>Live status from pickup to washing to delivery.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Automatic billing</h6><p>Per-item pricing posts automatically to the guest folio.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Staff task queue</h6><p>Laundry staff get a prioritized digital task queue.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Laundry Queue</div>
+            <div class="mock-activity-row" style="border-top:none;">Room 204 — 6 items <span class="float-end text-gold">Washing</span></div>
+            <div class="mock-activity-row">Room 118 — 3 items <span class="float-end" style="color:#4ade80;">Ready</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-panel d-none" data-module="br">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Bar Management</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Inventory control &amp; revenue analytics</p>
+          <p class="text-muted-custom">Tab management, pour tracking, and real-time inventory control keep your bar profitable and accountable.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Tab management</h6><p>Open, transfer, and close tabs across bar and lounge areas.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Pour tracking</h6><p>Track pours against inventory to catch shrinkage early.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Revenue analytics</h6><p>Real-time reporting by bartender, shift, and beverage category.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Room charge posting</h6><p>Post bar charges directly to guest folios.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Bar Revenue</div>
+            <div class="mock-activity-row" style="border-top:none;">Tonight's Sales <span class="float-end" style="color:#4ade80;">$1,940</span></div>
+            <div class="mock-activity-row">Open Tabs <span class="float-end text-gold">6</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="module-panel d-none" data-module="bh">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-6">
+          <h3>Banquet Hall</h3>
+          <p class="text-gold fw-semibold mb-2" style="font-size:.95rem;">Event booking &amp; catering coordination</p>
+          <p class="text-muted-custom">Manage bookings, floor plans, and catering logistics for every event, from board meetings to weddings.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Event booking calendar</h6><p>Visual calendar to manage multiple halls and time slots.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Floor plan management</h6><p>Configure seating and layouts per event type.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Catering coordination</h6><p>Sync menu selections and headcounts with the kitchen.</p></div></div>
+            <div class="col-sm-6"><div class="feature-box"><h6><i class="fa-solid fa-circle-check icon-circle"></i>Invoice generation</h6><p>Automatic invoicing for venue, catering, and add-on services.</p></div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            <a href="pricing.html" class="btn btn-outline-navy">View Pricing <i class="fa-solid fa-chevron-right ms-1"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="mock-window mx-auto" style="max-width:420px;">
+            <div class="dots mb-2"><span></span><span></span><span></span></div>
+            <div class="text-white-50 small mb-3">Upcoming Events</div>
+            <div class="mock-activity-row" style="border-top:none;">Grand Ballroom — Wedding <span class="float-end text-gold">Sat</span></div>
+            <div class="mock-activity-row">Meeting Room B — Conference <span class="float-end" style="color:#4ade80;">Mon</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ALL MODULES GRID ===================== -->
+<section class="section bg-navy">
+  <div class="container text-center">
+    <h2 class="text-white">All Modules at a Glance</h2>
+    <p class="text-white-50 mb-5">Click any module to explore its full feature set.</p>
+    <div class="row g-4 text-start">
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">POS</span>
+          <div class="icon-box"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h5>Point of Sale</h5>
+          <p>Unified billing across every revenue center</p>
+          <a href="#" class="learn-more" data-module-link="pos">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">PMS</span>
+          <div class="icon-box"><i class="fa-solid fa-building"></i></div>
+          <h5>Property Management</h5>
+          <p>Complete reservation and guest management intelligence</p>
+          <a href="#" class="learn-more" data-module-link="pms">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">RS</span>
+          <div class="icon-box"><i class="fa-solid fa-bell-concierge"></i></div>
+          <h5>Room Service</h5>
+          <p>Digital in-room ordering with real-time kitchen routing</p>
+          <a href="#" class="learn-more" data-module-link="rs">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">FD</span>
+          <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+          <h5>Front Desk</h5>
+          <p>Streamlined check-in, check-out, and guest communication</p>
+          <a href="#" class="learn-more" data-module-link="fd">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">LN</span>
+          <div class="icon-box"><i class="fa-solid fa-shirt"></i></div>
+          <h5>Laundry Management</h5>
+          <p>Automated laundry request tracking and billing</p>
+          <a href="#" class="learn-more" data-module-link="ln">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">BR</span>
+          <div class="icon-box"><i class="fa-solid fa-martini-glass"></i></div>
+          <h5>Bar Management</h5>
+          <p>Inventory control and revenue analytics for bar operations</p>
+          <a href="#" class="learn-more" data-module-link="br">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="module-card">
+          <span class="badge-tag">BH</span>
+          <div class="icon-box"><i class="fa-solid fa-champagne-glasses"></i></div>
+          <h5>Banquet Hall</h5>
+          <p>Event booking, catering coordination, and floor plans</p>
+          <a href="#" class="learn-more" data-module-link="bh">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <a class="brand" href="index.html"><img src="assets/logo-icon.svg" alt="room2service logo">room<span class="two">2</span>service</a>
+        <p class="tagline">The complete operating system for modern hotels. Unify every department on one intelligent platform.</p>
+        <div class="contact-line"><i class="fa-solid fa-envelope"></i> hello@room2service.com</div>
+        <div class="contact-line"><i class="fa-solid fa-phone"></i> +1 (800) 000-0000</div>
+        <div class="contact-line"><i class="fa-solid fa-location-dot"></i> Hospitality Technology Hub<br>New York, NY 10001</div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Services</h6>
+        <a href="services.html">Point of Sale (POS)</a>
+        <a href="services.html">Property Management (PMS)</a>
+        <a href="services.html">Room Service</a>
+        <a href="services.html">Front Desk</a>
+        <a href="services.html">Laundry Management</a>
+        <a href="services.html">Bar Management</a>
+        <a href="services.html">Banquet Hall</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Company</h6>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Request Demo</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Stay Updated</h6>
+        <p class="tagline mb-3">Get hospitality tech insights and product updates delivered to your inbox.</p>
+        <form class="footer-subscribe d-flex flex-column gap-2">
+          <input type="email" class="form-control form-control-custom" placeholder="Your email address">
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+      <span>&copy; 2026 room2service. All rights reserved.</span>
+      <span class="text-end">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+  document.querySelectorAll('[data-module-link]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = link.getAttribute('data-module-link');
+      document.querySelectorAll('.module-tab').forEach(function (t) {
+        t.classList.toggle('active', t.getAttribute('data-module') === target);
+      });
+      document.querySelectorAll('.module-panel').forEach(function (p) {
+        p.classList.toggle('d-none', p.getAttribute('data-module') !== target);
+      });
+      window.scrollTo({ top: document.querySelector('.module-tab').getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
