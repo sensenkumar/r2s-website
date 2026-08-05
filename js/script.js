@@ -35,4 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Sticky header shadow on scroll
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var toggleHeaderScrolled = function () {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    };
+    toggleHeaderScrolled();
+    window.addEventListener('scroll', toggleHeaderScrolled);
+  }
+
 });

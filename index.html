@@ -4,14 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>room2service — The Complete Operating System for Modern Hotels</title>
-<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="icon" type="image/svg+xml" href="assets/favicon-32x32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="is-loading">
+
+<!-- ===================== PAGE LOADER ===================== -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-rings">
+        <span class="loader-ring r1"></span>
+        <span class="loader-ring r2"></span>
+        <span class="loader-ring r3"></span>
+        <img class="loader-logo" src="assets/logoV2.png" alt="Room2Service">
+    </div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+<script>
+    (function () {
+        var start = Date.now();
+        var MIN_MS = 1800;
+        window.addEventListener('load', function () {
+            var wait = Math.max(MIN_MS - (Date.now() - start), 0);
+            setTimeout(function () {
+                var loader = document.getElementById('pageLoader');
+                document.body.classList.remove('is-loading');
+                if (loader) {
+                    loader.classList.add('loader-hidden');
+                    setTimeout(function () { loader.remove(); }, 600);
+                }
+            }, wait);
+        });
+    })();
+</script>
 
 <div class="top-accent-bar"></div>
 
@@ -20,7 +48,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg p-0">
       <a class="brand" href="index.html">
-        <img src="assets/logo-icon.svg" alt="room2service logo">
+        <span class="logo-badge"><img src="assets/logoV2-icon.png" alt="room2service logo" class="brand-logo-v2"></span>
         room<span class="two">2</span>service
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -40,53 +68,177 @@
   </div>
 </header>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero-section">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-6">
-        <p class="eyebrow single">THE FUTURE OF HOTEL OPERATIONS</p>
-        <h1 class="display-5 text-white" style="line-height:1.15;">The Complete Operating System for Modern Hotels</h1>
-        <p class="lead mt-3">Unify every department — from front desk to banquet hall — on one intelligent platform built for hospitality professionals.</p>
-        <div class="d-flex flex-wrap gap-3 mt-4">
-          <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
-          <a href="services.html" class="btn btn-outline-light-custom">See How It Works <i class="fa-solid fa-chevron-right ms-1"></i></a>
-        </div>
-        <div class="hero-badges mt-4">
-          <span><i class="fa-solid fa-circle-check"></i> 500+ Properties</span>
-          <span><i class="fa-solid fa-circle-check"></i> SOC 2 Compliant</span>
-          <span><i class="fa-solid fa-circle-check"></i> 99.9% Uptime</span>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="position-relative">
-          <div class="mock-window">
-            <div class="dots mb-2"><span></span><span></span><span></span></div>
-            <div class="text-white-50 small mb-3">room2service</div>
-            <div class="row g-2 mb-2">
-              <div class="col-4"><div class="mock-stat"><div class="label">Occupied Rooms</div><div class="value">142/180</div></div></div>
-              <div class="col-4"><div class="mock-stat"><div class="label">Today's Revenue</div><div class="value" style="color:#4ade80;">$24,830</div></div></div>
-              <div class="col-4"><div class="mock-stat"><div class="label">Active Orders</div><div class="value">37</div></div></div>
+<!-- ===================== HERO CAROUSEL ===================== -->
+<section class="hero-section p-0">
+  <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="container hero-slide-pad">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+              <p class="eyebrow single">THE FUTURE OF HOTEL OPERATIONS</p>
+              <h1 class="display-5 text-white" style="line-height:1.15;">The Complete Operating System for Modern Hotels</h1>
+              <p class="lead mt-3">Unify every department — from front desk to banquet hall — on one intelligent platform built for hospitality professionals.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="services.html" class="btn btn-outline-light-custom">See How It Works <i class="fa-solid fa-chevron-right ms-1"></i></a>
+              </div>
+              <div class="hero-badges mt-4">
+                <span><i class="fa-solid fa-circle-check"></i> 500+ Properties</span>
+                <span><i class="fa-solid fa-circle-check"></i> SOC 2 Compliant</span>
+                <span><i class="fa-solid fa-circle-check"></i> 99.9% Uptime</span>
+              </div>
             </div>
-            <div class="row g-2 mb-2">
-              <div class="col-4"><div class="mock-module-pill">POS</div></div>
-              <div class="col-4"><div class="mock-module-pill">PMS</div></div>
-              <div class="col-4"><div class="mock-module-pill active">Room Svc</div></div>
-              <div class="col-4"><div class="mock-module-pill">Front Desk</div></div>
-              <div class="col-4"><div class="mock-module-pill active">Bar</div></div>
-              <div class="col-4"><div class="mock-module-pill">Banquet</div></div>
+            <div class="col-lg-6">
+              <div class="position-relative">
+                <div class="mock-window">
+                  <div class="dots mb-2"><span></span><span></span><span></span></div>
+                  <div class="text-white-50 small mb-3">room2service</div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-stat"><div class="label">Occupied Rooms</div><div class="value">142/180</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Today's Revenue</div><div class="value" style="color:#4ade80;">$24,830</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Active Orders</div><div class="value">37</div></div></div>
+                  </div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-module-pill">POS</div></div>
+                    <div class="col-4"><div class="mock-module-pill">PMS</div></div>
+                    <div class="col-4"><div class="mock-module-pill active">Room Svc</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Front Desk</div></div>
+                    <div class="col-4"><div class="mock-module-pill active">Bar</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Banquet</div></div>
+                  </div>
+                  <div class="mock-stat mb-1" style="background:transparent;border:none;padding:.4rem 0;">
+                    <div class="label text-uppercase" style="letter-spacing:.05em;">Live Activity</div>
+                  </div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 204 — Room service order placed <span class="float-end text-white-50">2m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 118 — Check-in completed <span class="float-end text-white-50">5m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room Bar — Tab closed — $340 <span class="float-end text-white-50">9m ago</span></div>
+                  <div class="mock-floating-tag top-right"><i class="fa-solid fa-arrow-trend-up"></i> 18% Revenue vs last month</div>
+                  <div class="mock-floating-tag bottom-left" style="color:#4ade80;"><i class="fa-solid fa-circle-check"></i> All Systems Live <div class="small fw-normal" style="color:rgba(255,255,255,.5);">7 modules active</div></div>
+                </div>
+              </div>
             </div>
-            <div class="mock-stat mb-1" style="background:transparent;border:none;padding:.4rem 0;">
-              <div class="label text-uppercase" style="letter-spacing:.05em;">Live Activity</div>
-            </div>
-            <div class="mock-activity-row"><span class="dot"></span>Room 204 — Room service order placed <span class="float-end text-white-50">2m ago</span></div>
-            <div class="mock-activity-row"><span class="dot"></span>Room 118 — Check-in completed <span class="float-end text-white-50">5m ago</span></div>
-            <div class="mock-activity-row"><span class="dot"></span>Room Bar — Tab closed — $340 <span class="float-end text-white-50">9m ago</span></div>
-            <div class="mock-floating-tag top-right"><i class="fa-solid fa-arrow-trend-up"></i> 18% Revenue vs last month</div>
-            <div class="mock-floating-tag bottom-left" style="color:#4ade80;"><i class="fa-solid fa-circle-check"></i> All Systems Live <div class="small fw-normal" style="color:rgba(255,255,255,.5);">7 modules active</div></div>
           </div>
         </div>
       </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="container hero-slide-pad">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+              <p class="eyebrow single">DIGITAL ROOM SERVICE</p>
+              <h1 class="display-5 text-white" style="line-height:1.15;">Room Service, Reinvented for the Digital Guest</h1>
+              <p class="lead mt-3">Guests order from their phone. Orders route to the kitchen instantly. You get real-time tracking from placement to delivery.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="services.html" class="btn btn-outline-light-custom">See How It Works <i class="fa-solid fa-chevron-right ms-1"></i></a>
+              </div>
+              <div class="hero-badges mt-4">
+                <span><i class="fa-solid fa-circle-check"></i> Instant Order Routing</span>
+                <span><i class="fa-solid fa-circle-check"></i> Live Kitchen Sync</span>
+                <span><i class="fa-solid fa-circle-check"></i> Contactless Payments</span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="position-relative">
+                <div class="mock-window">
+                  <div class="dots mb-2"><span></span><span></span><span></span></div>
+                  <div class="text-white-50 small mb-3">room2service</div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-stat"><div class="label">Orders Today</div><div class="value">86</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Avg. Delivery</div><div class="value" style="color:#4ade80;">14 min</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Guest Rating</div><div class="value">4.9★</div></div></div>
+                  </div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-module-pill active">POS</div></div>
+                    <div class="col-4"><div class="mock-module-pill">PMS</div></div>
+                    <div class="col-4"><div class="mock-module-pill active">Room Svc</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Front Desk</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Bar</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Banquet</div></div>
+                  </div>
+                  <div class="mock-stat mb-1" style="background:transparent;border:none;padding:.4rem 0;">
+                    <div class="label text-uppercase" style="letter-spacing:.05em;">Live Activity</div>
+                  </div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 312 — Breakfast order placed <span class="float-end text-white-50">1m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 204 — Order out for delivery <span class="float-end text-white-50">4m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 118 — Order delivered <span class="float-end text-white-50">8m ago</span></div>
+                  <div class="mock-floating-tag top-right"><i class="fa-solid fa-arrow-trend-up"></i> 32% Faster Delivery</div>
+                  <div class="mock-floating-tag bottom-left" style="color:#4ade80;"><i class="fa-solid fa-circle-check"></i> Kitchen Synced <div class="small fw-normal" style="color:rgba(255,255,255,.5);">Live order queue</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="container hero-slide-pad">
+          <div class="row align-items-center gy-5">
+            <div class="col-lg-6">
+              <p class="eyebrow single">SEAMLESS FRONT DESK</p>
+              <h1 class="display-5 text-white" style="line-height:1.15;">Check-In to Check-Out, Fully Streamlined</h1>
+              <p class="lead mt-3">Give your front desk team one screen for reservations, guest profiles, and occupancy — no more switching between systems.</p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="contact.html" class="btn btn-gold">Request a Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                <a href="services.html" class="btn btn-outline-light-custom">See How It Works <i class="fa-solid fa-chevron-right ms-1"></i></a>
+              </div>
+              <div class="hero-badges mt-4">
+                <span><i class="fa-solid fa-circle-check"></i> One-Click Check-In</span>
+                <span><i class="fa-solid fa-circle-check"></i> Real-Time Occupancy</span>
+                <span><i class="fa-solid fa-circle-check"></i> Guest Profile Sync</span>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="position-relative">
+                <div class="mock-window">
+                  <div class="dots mb-2"><span></span><span></span><span></span></div>
+                  <div class="text-white-50 small mb-3">room2service</div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-stat"><div class="label">Check-ins Today</div><div class="value">54</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Occupancy</div><div class="value" style="color:#4ade80;">79%</div></div></div>
+                    <div class="col-4"><div class="mock-stat"><div class="label">Avg. Check-in</div><div class="value">90 sec</div></div></div>
+                  </div>
+                  <div class="row g-2 mb-2">
+                    <div class="col-4"><div class="mock-module-pill">POS</div></div>
+                    <div class="col-4"><div class="mock-module-pill active">PMS</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Room Svc</div></div>
+                    <div class="col-4"><div class="mock-module-pill active">Front Desk</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Bar</div></div>
+                    <div class="col-4"><div class="mock-module-pill">Banquet</div></div>
+                  </div>
+                  <div class="mock-stat mb-1" style="background:transparent;border:none;padding:.4rem 0;">
+                    <div class="label text-uppercase" style="letter-spacing:.05em;">Live Activity</div>
+                  </div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 210 — Guest checked in <span class="float-end text-white-50">2m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 118 — Checked out <span class="float-end text-white-50">6m ago</span></div>
+                  <div class="mock-activity-row"><span class="dot"></span>Room 402 — Early check-in requested <span class="float-end text-white-50">10m ago</span></div>
+                  <div class="mock-floating-tag top-right"><i class="fa-solid fa-arrow-trend-up"></i> 40% Faster Check-in</div>
+                  <div class="mock-floating-tag bottom-left" style="color:#4ade80;"><i class="fa-solid fa-circle-check"></i> All Rooms Synced <div class="small fw-normal" style="color:rgba(255,255,255,.5);">Live occupancy map</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="hero-carousel-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="hero-carousel-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+    </button>
+
+    <div class="carousel-indicators hero-carousel-dots">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
     </div>
   </div>
 </section>
@@ -262,12 +414,19 @@
   </div>
 </section>
 
+<!-- ===================== FOOTER WAVE ===================== -->
+<div class="footer-wave">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,100 1440,50 L1440,100 L0,100 Z" fill="#0b1a30"></path>
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,100 1440,50" fill="none" stroke="#c9a24b" stroke-width="3" opacity="0.6"></path>
+  </svg>
+</div>
 <!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
   <div class="container">
     <div class="row gy-4">
       <div class="col-lg-4">
-        <a class="brand" href="index.html"><img src="assets/logo-icon.svg" alt="room2service logo">room<span class="two">2</span>service</a>
+        <a class="brand" href="index.html"><span class="logo-badge"><img src="assets/logoV2-icon.png" alt="room2service logo" class="brand-logo-v2 footer-logo-v2"></span> room<span class="two">2</span>service</a>
         <p class="tagline">The complete operating system for modern hotels. Unify every department on one intelligent platform.</p>
         <div class="contact-line"><i class="fa-solid fa-envelope"></i> hello@room2service.com</div>
         <div class="contact-line"><i class="fa-solid fa-phone"></i> +1 (800) 000-0000</div>
