@@ -45,4 +45,35 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', toggleHeaderScrolled);
   }
 
+  // Scroll reveal animations (works on desktop and mobile)
+  var revealSelectors = [
+    '.module-card', '.price-card', '.recognition-card', '.team-card',
+    '.timeline-card', '.value-card', '.contact-form-card', '.demo-form-card',
+    '.stat-block', '.testimonial-section .quote', '.text-center.mb-5'
+  ];
+  var revealGroups = revealSelectors.map(function (sel) {
+    return document.querySelectorAll(sel);
+  });
+  revealGroups.forEach(function (group) {
+    group.forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = Math.min(i, 6) * 70 + 'ms';
+    });
+  });
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  }
+
 });
