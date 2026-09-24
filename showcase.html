@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live Demo — room2service</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="js/vendor/lenis.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/showcase.css">
+</head>
+<body>
+
+<!-- ===================== PRELOADER ===================== -->
+<div class="sc-preloader" id="scPreloader" role="status" aria-live="polite" aria-label="Loading room2service live demo">
+  <div class="sc-pre-inner">
+    <div class="sc-pre-meta">
+      <span class="sc-pre-mark">room<span class="two">2</span>service</span>
+      <span class="sc-pre-tag">LIVE DEMO ENVIRONMENT</span>
+    </div>
+    <div class="sc-pre-num"><span id="scPreCount">0</span><i>%</i></div>
+    <div class="sc-pre-rail"><span class="sc-pre-fill" id="scPreFill"></span></div>
+    <p class="sc-pre-status" id="scPreStatus">SYNCING FRONT DESK</p>
+  </div>
+  <div class="sc-pre-shutter" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div>
+
+<!-- ===================== CURSOR ===================== -->
+<div class="sc-cursor" aria-hidden="true">
+  <div class="sc-cursor-ring" id="scCursorRing"><span class="sc-cursor-label" id="scCursorLabel"></span></div>
+  <div class="sc-cursor-dot" id="scCursorDot"></div>
+</div>
+
+<!-- ===================== HUD progress rail ===================== -->
+<div class="sc-hud" aria-hidden="true"><span class="sc-hud-fill" id="scHudFill"></span></div>
+
+<div class="top-accent-bar"></div>
+
+<!-- ===================== HEADER (same markup as the rest of the site) ===================== -->
+<header class="site-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg p-0">
+      <a class="brand" href="index.html">
+        <span class="logo-badge"><img src="assets/logoV2-icon.png" alt="room2service logo" class="brand-logo-v2"></span>
+        room<span class="two">2</span>service
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav site-nav align-items-lg-center py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="showcase.html">Showcase</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-gold mt-2 mt-lg-0 ms-lg-3">Request Demo</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="sc-root">
+
+  <!-- ===================== 01 · BOOT REVEAL ===================== -->
+  <section class="sc-reveal" id="scReveal">
+    <div class="sc-stage" id="scRevealStage">
+      <div class="sc-blob-field">
+        <span class="sc-blob sc-blob-a"></span>
+        <span class="sc-blob sc-blob-b"></span>
+      </div>
+
+      <div class="sc-mock-under">
+        <div class="sc-mock-window">
+          <div class="sc-mock-dots"><span></span><span></span><span></span></div>
+          <div class="sc-mock-label">room2service — live dashboard</div>
+          <div class="sc-mock-stats">
+            <div class="sc-mock-stat"><div class="l">Occupied</div><div class="v">142/180</div></div>
+            <div class="sc-mock-stat"><div class="l">Revenue</div><div class="v" style="color:#4ade80;">$24,830</div></div>
+            <div class="sc-mock-stat"><div class="l">Orders</div><div class="v">37</div></div>
+          </div>
+          <div class="sc-mock-pills">
+            <div class="sc-mock-pill is-on">POS</div>
+            <div class="sc-mock-pill is-on">PMS</div>
+            <div class="sc-mock-pill is-on">Room Svc</div>
+            <div class="sc-mock-pill">Front Desk</div>
+            <div class="sc-mock-pill is-on">Bar</div>
+            <div class="sc-mock-pill">Banquet</div>
+          </div>
+          <div class="sc-mock-row"><span class="d"></span>Room 204 — Room service order placed</div>
+          <div class="sc-mock-row"><span class="d"></span>Room 118 — Check-in completed</div>
+        </div>
+      </div>
+
+      <div class="sc-veil" aria-hidden="true">
+        <span class="sc-veil-mark">room<span class="two">2</span>service</span>
+      </div>
+
+      <div class="sc-stage-vig"></div>
+
+      <div class="sc-reveal-copy">
+        <p class="sc-kicker"><i class="sc-dot"></i>DESIGN LAB — LIVE SCROLL DEMO</p>
+        <h1 class="sc-display sc-display--hero" id="scRevealTitle">
+          <span class="sc-line" data-split>ONE PLATFORM</span>
+          <span class="sc-line sc-line--mix" data-split><em>for</em> EVERY DEPARTMENT</span>
+        </h1>
+        <p class="sc-lede">Front desk, housekeeping, room service, POS and banquet — orchestrated in real time, on the platform your staff will actually enjoy using.</p>
+      </div>
+
+      <ul class="sc-edge-stats" aria-hidden="true">
+        <li class="sc-edge-stat sc-edge-stat--tl"><b>500<span>+</span></b><span>PROPERTIES LIVE</span></li>
+        <li class="sc-edge-stat sc-edge-stat--tr"><b>7</b><span>MODULES, ONE LOGIN</span></li>
+        <li class="sc-edge-stat sc-edge-stat--bl"><b>24<span>/7</span></b><span>REAL SUPPORT</span></li>
+      </ul>
+
+      <div class="sc-trio" aria-hidden="true"><span>UNIFIED</span><span>AUTOMATED</span><span>IN CONTROL</span></div>
+
+      <div class="sc-scroll-cue" aria-hidden="true"><span>SCROLL</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- ===================== 02 · SPEC STRIP ===================== -->
+  <section class="sc-specs" id="scSpecs" aria-labelledby="scSpecsTitle">
+    <div class="sc-wrap">
+      <div class="sc-sec-head">
+        <p class="sc-kicker"><i class="sc-dot"></i>02 — BY THE NUMBERS</p>
+        <h2 class="sc-sec-title" id="scSpecsTitle">Numbers our <em>GMs</em><br>actually watch.</h2>
+        <p class="sc-note">Live from real deployments. No launch mode, no asterisks.</p>
+      </div>
+      <ol class="sc-spec-row">
+        <li class="sc-spec">
+          <span class="sc-spec-idx">01</span>
+          <b class="sc-spec-fig"><span class="sc-count" data-count="500" data-dec="0">0</span><i>+</i></b>
+          <span class="sc-spec-unit">PROPERTIES</span>
+          <span class="sc-spec-label">Hotels and resorts live on room2service today</span>
+        </li>
+        <li class="sc-spec">
+          <span class="sc-spec-idx">02</span>
+          <b class="sc-spec-fig"><span class="sc-count" data-count="99.9" data-dec="1">0</span><i>%</i></b>
+          <span class="sc-spec-unit">UPTIME</span>
+          <span class="sc-spec-label">Trailing 12-month platform availability</span>
+        </li>
+        <li class="sc-spec">
+          <span class="sc-spec-idx">03</span>
+          <b class="sc-spec-fig"><span class="sc-count" data-count="42" data-dec="0">0</span><i>s</i></b>
+          <span class="sc-spec-unit">ORDER TO KITCHEN</span>
+          <span class="sc-spec-label">Average time from guest tap to kitchen ticket</span>
+        </li>
+        <li class="sc-spec">
+          <span class="sc-spec-idx">04</span>
+          <b class="sc-spec-fig"><span class="sc-count" data-count="24" data-dec="0">0</span><i>/7</i></b>
+          <span class="sc-spec-unit">SUPPORT</span>
+          <span class="sc-spec-label">Real engineers on call, every hour of the year</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== 03 · LIVE OPS ===================== -->
+  <section class="sc-ops" id="scOps" aria-labelledby="scOpsTitle">
+    <div class="sc-stage" id="scOpsStage">
+      <div class="sc-grid-field" aria-hidden="true"></div>
+      <h2 class="sc-ops-word" id="scOpsTitle" aria-hidden="true"><span>LIVE</span></h2>
+      <p class="sc-ops-caption">GRAND PLAZA HOTEL — 11:42 PM — 142/180 OCCUPIED</p>
+      <div class="sc-stage-vig"></div>
+      <div class="sc-ops-cards">
+        <article class="sc-gcard">
+          <p class="sc-gcard-k">ORDER ROUTING</p>
+          <b class="sc-gcard-fig">&lt;2<i>s</i></b>
+          <p class="sc-gcard-sub">From guest tap to kitchen display, every time.</p>
+        </article>
+        <article class="sc-gcard">
+          <p class="sc-gcard-k">DEPARTMENT SYNC</p>
+          <b class="sc-gcard-fig">LIVE</b>
+          <p class="sc-gcard-sub">Every team sees the same board, instantly.</p>
+        </article>
+        <article class="sc-gcard">
+          <p class="sc-gcard-k">UPTIME</p>
+          <b class="sc-gcard-fig">99.9<i>%</i></b>
+          <p class="sc-gcard-sub">Measured, not marketed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 04 · MODULE GALLERY ===================== -->
+  <section class="sc-gallery" id="scGallery" aria-labelledby="scGalleryTitle">
+    <div class="sc-gallery-pin" id="scGalleryPin">
+      <div class="sc-gallery-head">
+        <p class="sc-kicker"><i class="sc-dot"></i>04 — MODULES</p>
+        <h2 class="sc-sec-title" id="scGalleryTitle" style="font-size:clamp(1.8rem,4vw,3rem);">Every department,<br><em>one</em> board.</h2>
+      </div>
+      <div class="sc-gallery-track" id="scGalleryTrack">
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">01</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-cash-register"></i></div>
+            <div class="sc-slab-mini-stat"><span>Today's sales</span><b>$8,240</b></div>
+            <div class="sc-slab-mini-stat"><span>Open tabs</span><b>14</b></div>
+          </div>
+          <figcaption><b>POINT OF SALE</b><span>Every outlet on one ticketing system, reconciled automatically at night audit.</span></figcaption>
+        </figure>
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">02</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="sc-slab-mini-stat"><span>Occupancy</span><b>79%</b></div>
+            <div class="sc-slab-mini-stat"><span>Arrivals today</span><b>22</b></div>
+          </div>
+          <figcaption><b>PROPERTY MANAGEMENT</b><span>Rooms, rates, and reservations — the source of truth every other module reads from.</span></figcaption>
+        </figure>
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">03</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="sc-slab-mini-stat"><span>Active orders</span><b>9</b></div>
+            <div class="sc-slab-mini-stat"><span>Avg. delivery</span><b>14 min</b></div>
+          </div>
+          <figcaption><b>ROOM SERVICE</b><span>Guests order from their phone. Kitchen gets the ticket before the call would've even connected.</span></figcaption>
+        </figure>
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">04</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+            <div class="sc-slab-mini-stat"><span>Check-ins left</span><b>6</b></div>
+            <div class="sc-slab-mini-stat"><span>Avg. wait</span><b>90 sec</b></div>
+          </div>
+          <figcaption><b>FRONT DESK</b><span>Check-in, check-out, and folio — without the guest ever seeing a spreadsheet.</span></figcaption>
+        </figure>
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">05</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-broom"></i></div>
+            <div class="sc-slab-mini-stat"><span>Rooms clean</span><b>131/180</b></div>
+            <div class="sc-slab-mini-stat"><span>In progress</span><b>11</b></div>
+          </div>
+          <figcaption><b>HOUSEKEEPING</b><span>Live room status pushed straight to front desk — no radio call needed.</span></figcaption>
+        </figure>
+
+        <figure class="sc-slab">
+          <span class="sc-slab-idx">06</span>
+          <div class="sc-slab-mock">
+            <div class="sc-slab-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <div class="sc-slab-mini-stat"><span>Events today</span><b>3</b></div>
+            <div class="sc-slab-mini-stat"><span>Covers booked</span><b>210</b></div>
+          </div>
+          <figcaption><b>BANQUET HALL</b><span>Floor plans, catering orders, and billing for every event, in one place.</span></figcaption>
+        </figure>
+
+      </div>
+      <div class="sc-gallery-rail" aria-hidden="true"><span id="scGalleryRailFill"></span></div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 · CONFIGURATOR ===================== -->
+  <section class="sc-config" id="scConfig" aria-labelledby="scConfigTitle">
+    <div class="sc-wrap">
+      <div class="sc-config-head">
+        <p class="sc-kicker"><i class="sc-dot"></i>05 — CONFIGURE</p>
+        <h2 class="sc-sec-title" id="scConfigTitle">Built for <em>your</em><br>property.</h2>
+        <p class="sc-note">Four starting points. Every one ships with the full module set — just tuned differently from day one.</p>
+      </div>
+
+      <div class="sc-config-stage">
+        <div class="sc-config-view" id="scConfigView">
+          <div class="sc-config-panel-inner is-live">
+            <div class="sc-mock-dots"><span></span><span></span><span></span></div>
+            <div class="sc-mock-label">room2service — Boutique Hotel</div>
+            <div class="sc-mock-stats">
+              <div class="sc-mock-stat"><div class="l">Rooms</div><div class="v">18</div></div>
+              <div class="sc-mock-stat"><div class="l">Avg. rate</div><div class="v">$240</div></div>
+              <div class="sc-mock-stat"><div class="l">Staff seats</div><div class="v">6</div></div>
+            </div>
+            <div class="sc-mock-pills">
+              <div class="sc-mock-pill is-on">Front Desk</div>
+              <div class="sc-mock-pill is-on">Room Service</div>
+              <div class="sc-mock-pill">Banquet</div>
+              <div class="sc-mock-pill is-on">Housekeeping</div>
+              <div class="sc-mock-pill">Bar</div>
+              <div class="sc-mock-pill is-on">POS</div>
+            </div>
+          </div>
+          <p class="sc-config-code" id="scConfigCode">R2S / BOUTIQUE</p>
+        </div>
+      </div>
+
+      <div class="sc-config-panel">
+        <div class="sc-swatches" role="group" aria-label="Choose a property type">
+          <button class="sc-sw is-active" type="button" data-cursor="APPLY"
+                  data-name="Boutique Hotel" data-code="R2S / BOUTIQUE"
+                  data-desc="Small, design-led properties that want every guest touch to feel personal — and every ops screen to stay out of the way."
+                  data-stat-a="2 weeks" data-stat-b="4 of 7"
+                  data-panel='<div class="sc-mock-dots"><span></span><span></span><span></span></div><div class="sc-mock-label">room2service — Boutique Hotel</div><div class="sc-mock-stats"><div class="sc-mock-stat"><div class="l">Rooms</div><div class="v">18</div></div><div class="sc-mock-stat"><div class="l">Avg. rate</div><div class="v">$240</div></div><div class="sc-mock-stat"><div class="l">Staff seats</div><div class="v">6</div></div></div><div class="sc-mock-pills"><div class="sc-mock-pill is-on">Front Desk</div><div class="sc-mock-pill is-on">Room Service</div><div class="sc-mock-pill">Banquet</div><div class="sc-mock-pill is-on">Housekeeping</div><div class="sc-mock-pill">Bar</div><div class="sc-mock-pill is-on">POS</div></div>'>
+            <span class="sc-sw-chip" style="--chip:linear-gradient(140deg,#c9a24b,#8a6b2e)"></span>
+            <span class="sc-sw-name">Boutique Hotel</span>
+          </button>
+          <button class="sc-sw" type="button" data-cursor="APPLY"
+                  data-name="Full-Service Resort" data-code="R2S / RESORT"
+                  data-desc="Multiple outlets, multiple pools, one banquet calendar — every department reading from the same live board."
+                  data-stat-a="3–4 weeks" data-stat-b="7 of 7"
+                  data-panel='<div class="sc-mock-dots"><span></span><span></span><span></span></div><div class="sc-mock-label">room2service — Full-Service Resort</div><div class="sc-mock-stats"><div class="sc-mock-stat"><div class="l">Rooms</div><div class="v">180</div></div><div class="sc-mock-stat"><div class="l">Outlets</div><div class="v">5</div></div><div class="sc-mock-stat"><div class="l">Staff seats</div><div class="v">64</div></div></div><div class="sc-mock-pills"><div class="sc-mock-pill is-on">Front Desk</div><div class="sc-mock-pill is-on">Room Service</div><div class="sc-mock-pill is-on">Banquet</div><div class="sc-mock-pill is-on">Housekeeping</div><div class="sc-mock-pill is-on">Bar</div><div class="sc-mock-pill is-on">POS</div></div>'>
+            <span class="sc-sw-chip" style="--chip:linear-gradient(140deg,#16305a,#0b1a30)"></span>
+            <span class="sc-sw-name">Full-Service Resort</span>
+          </button>
+          <button class="sc-sw" type="button" data-cursor="APPLY"
+                  data-name="Serviced Apartments" data-code="R2S / RESIDENCES"
+                  data-desc="Longer stays, lighter-touch service — housekeeping and front desk without the full food-and-beverage stack."
+                  data-stat-a="1–2 weeks" data-stat-b="3 of 7"
+                  data-panel='<div class="sc-mock-dots"><span></span><span></span><span></span></div><div class="sc-mock-label">room2service — Serviced Apartments</div><div class="sc-mock-stats"><div class="sc-mock-stat"><div class="l">Units</div><div class="v">64</div></div><div class="sc-mock-stat"><div class="l">Avg. stay</div><div class="v">11 nt</div></div><div class="sc-mock-stat"><div class="l">Staff seats</div><div class="v">9</div></div></div><div class="sc-mock-pills"><div class="sc-mock-pill is-on">Front Desk</div><div class="sc-mock-pill">Room Service</div><div class="sc-mock-pill">Banquet</div><div class="sc-mock-pill is-on">Housekeeping</div><div class="sc-mock-pill">Bar</div><div class="sc-mock-pill is-on">POS</div></div>'>
+            <span class="sc-sw-chip" style="--chip:linear-gradient(140deg,#8a8f98,#4a4e57)"></span>
+            <span class="sc-sw-name">Serviced Apartments</span>
+          </button>
+          <button class="sc-sw" type="button" data-cursor="APPLY"
+                  data-name="Restaurant &amp; Bar" data-code="R2S / F&amp;B"
+                  data-desc="No rooms to manage — just fast, accurate tickets from table to kitchen to close-out."
+                  data-stat-a="Under 1 week" data-stat-b="2 of 7"
+                  data-panel='<div class="sc-mock-dots"><span></span><span></span><span></span></div><div class="sc-mock-label">room2service — Restaurant &amp; Bar</div><div class="sc-mock-stats"><div class="sc-mock-stat"><div class="l">Tables</div><div class="v">32</div></div><div class="sc-mock-stat"><div class="l">Covers today</div><div class="v">186</div></div><div class="sc-mock-stat"><div class="l">Staff seats</div><div class="v">14</div></div></div><div class="sc-mock-pills"><div class="sc-mock-pill">Front Desk</div><div class="sc-mock-pill">Room Service</div><div class="sc-mock-pill">Banquet</div><div class="sc-mock-pill">Housekeeping</div><div class="sc-mock-pill is-on">Bar</div><div class="sc-mock-pill is-on">POS</div></div>'>
+            <span class="sc-sw-chip" style="--chip:linear-gradient(140deg,#b3894a,#5c3f1c)"></span>
+            <span class="sc-sw-name">Restaurant &amp; Bar</span>
+          </button>
+        </div>
+
+        <div class="sc-config-readout">
+          <h3 class="sc-config-name" id="scConfigName">Boutique Hotel</h3>
+          <p class="sc-config-desc" id="scConfigDesc">Small, design-led properties that want every guest touch to feel personal — and every ops screen to stay out of the way.</p>
+          <dl class="sc-config-meta">
+            <div><dt>Setup time</dt><dd id="scConfigStatA">2 weeks</dd></div>
+            <div><dt>Modules on day one</dt><dd id="scConfigStatB">4 of 7</dd></div>
+            <div><dt>Support tier</dt><dd>Priority</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 06 · ALWAYS ON OUTRO ===================== -->
+  <section class="sc-outro" id="scOutro" aria-labelledby="scOutroTitle">
+    <div class="sc-outro-pin" id="scOutroPin">
+      <div class="sc-outro-bg" aria-hidden="true"></div>
+      <div class="sc-stage-vig" aria-hidden="true"></div>
+      <p class="sc-outro-kicker" aria-hidden="true">365 DAYS A YEAR —</p>
+      <h2 class="sc-outro-word" id="scOutroTitle"><span class="visually-hidden">Always On</span><span class="sc-outro-letters" id="scOutroLetters" aria-hidden="true">ALWAYS ON</span></h2>
+      <p class="sc-outro-sub">Real hotels, real front desks, real 2&nbsp;a.m. checkouts. The platform has not gone down on a single one of them.</p>
+    </div>
+  </section>
+
+  <!-- ===================== 07 · REQUEST A DEMO ===================== -->
+  <section class="sc-reserve" id="scReserve" aria-labelledby="scReserveTitle">
+    <div class="sc-wrap sc-reserve-wrap">
+      <p class="sc-kicker"><i class="sc-dot"></i>07 — GET STARTED</p>
+      <h2 class="sc-sec-title" id="scReserveTitle">See it running<br><em>on</em> your property.</h2>
+      <p class="sc-note">A 20-minute walkthrough with a real specialist — no script, no pressure. Your modules, your workflows, your data.</p>
+      <a class="sc-bigcta" href="contact.html" data-cursor="DEMO">
+        <span class="sc-bigcta-l">REQUEST A DEMO</span>
+        <span class="sc-bigcta-a" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </span>
+      </a>
+      <ul class="sc-reserve-meta">
+        <li><b>RESPONSE TIME</b><span>Under 24 hours</span></li>
+        <li><b>SETUP</b><span>2–3 weeks, guided</span></li>
+        <li><b>CONTRACT</b><span>Month-to-month, no lock-in</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<button class="sc-idle" id="scIdleToggle" type="button" aria-pressed="true" data-cursor="TOGGLE">
+  <span class="sc-idle-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  <span class="sc-idle-text">LIVE SYNC <b id="scIdleState">ON</b></span>
+</button>
+
+<!-- ===================== FOOTER (same markup as the rest of the site) ===================== -->
+<div class="footer-wave">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,100 1440,50 L1440,100 L0,100 Z" fill="#0b1a30"></path>
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,100 1440,50" fill="none" stroke="#c9a24b" stroke-width="3" opacity="0.6"></path>
+  </svg>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-4">
+        <a class="brand" href="index.html"><span class="logo-badge"><img src="assets/logoV2-icon.png" alt="room2service logo" class="brand-logo-v2 footer-logo-v2"></span> room<span class="two">2</span>service</a>
+        <p class="tagline">The complete operating system for modern hotels. Unify every department on one intelligent platform.</p>
+        <div class="contact-line"><i class="fa-solid fa-envelope"></i> hello@room2service.com</div>
+        <div class="contact-line"><i class="fa-solid fa-phone"></i> +1 (800) 000-0000</div>
+        <div class="contact-line"><i class="fa-solid fa-location-dot"></i> Hospitality Technology Hub<br>New York, NY 10001</div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Services</h6>
+        <a href="services.html">Point of Sale (POS)</a>
+        <a href="services.html">Property Management (PMS)</a>
+        <a href="services.html">Room Service</a>
+        <a href="services.html">Front Desk</a>
+        <a href="services.html">Laundry Management</a>
+        <a href="services.html">Bar Management</a>
+        <a href="services.html">Banquet Hall</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Company</h6>
+        <a href="about.html">About Us</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html">Request Demo</a>
+      </div>
+      <div class="col-lg-4">
+        <h6>Stay Updated</h6>
+        <p class="tagline mb-3">Get hospitality tech insights and product updates delivered to your inbox.</p>
+        <form class="footer-subscribe d-flex flex-column gap-2">
+          <input type="email" class="form-control form-control-custom" placeholder="Your email address">
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center">
+      <span>&copy; 2026 room2service. All rights reserved.</span>
+      <span class="text-end">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/vendor/gsap.min.js"></script>
+<script src="js/vendor/ScrollTrigger.min.js"></script>
+<script src="js/vendor/lenis.min.js"></script>
+<script src="js/vendor/split-type.min.js"></script>
+<script src="js/showcase.js"></script>
+</body>
+</html>

@@ -895,6 +895,7 @@ a {
   .testimonial-section .quote { font-size: 1.1rem; }
   .footer-bottom .text-end { text-align: left !important; margin-top: .8rem; }
   .footer-bottom a:first-child { margin-left: 0; }
+  .hero-section .d-flex.flex-wrap.gap-3 { padding-left: 1rem; }
 }
 
 /* ---------- Scroll reveal ---------- */
