@@ -19,6 +19,23 @@
   }
   var EASE = 'power3.out';
 
+  /* ── 0 · MOBILE MENU — close on outside tap or Escape ── */
+  document.addEventListener('DOMContentLoaded', function () {
+    // Mobile menu: close on outside tap or Escape
+    var mainNav = document.getElementById('mainNav');
+    if (mainNav && window.bootstrap) {
+      var closeNav = function () {
+        if (mainNav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(mainNav, { toggle: false }).hide();
+      };
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.site-header')) closeNav();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeNav();
+      });
+    }
+  });
+
   /* ── 1 · SMOOTH SCROLL (Lenis → ScrollTrigger) ── */
   var lenis = null;
   function initLenis() {
@@ -154,7 +171,7 @@
     if (typeof window.SplitType === 'undefined') return;
     $$('[data-split]').forEach(function (el) {
       try {
-        var s = new SplitType(el, { types: 'chars', tagName: 'span' });
+        var s = new SplitType(el, { types: 'words, chars', tagName: 'span' });
         s.chars.forEach(function (c) { c.classList.add('sc-hchar'); });
       } catch (e) { /* noop */ }
     });
@@ -272,6 +289,8 @@
       /* section entrances */
       var reveals = [
         ['#scSpecs .sc-sec-head > *', '#scSpecs'],
+        ['#scRoles .sc-sec-head > *', '#scRoles'],
+        ['.sc-role', '.sc-role-grid'],
         ['#scConfig .sc-config-head > *', '#scConfig'],
         ['#scConfig .sc-config-stage', '#scConfig'],
         ['#scConfig .sc-sw', '.sc-swatches'],
@@ -326,6 +345,7 @@
       gsap.set(['.sc-outro-kicker', '.sc-outro-sub'], { opacity: 1 });
 
       [['#scSpecs .sc-sec-head > *', '#scSpecs'], ['.sc-spec', '.sc-spec-row'],
+       ['#scRoles .sc-sec-head > *', '#scRoles'], ['.sc-role', '.sc-role-grid'],
        ['#scConfig .sc-config-head > *', '#scConfig'], ['.sc-reserve-wrap > *', '#scReserve']
       ].forEach(function (pair) {
         var els = $$(pair[0]);

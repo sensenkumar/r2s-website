@@ -76,4 +76,18 @@ document.addEventListener('DOMContentLoaded', function () {
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
 
+  // Mobile menu: close on outside tap or Escape
+  var mainNav = document.getElementById('mainNav');
+  if (mainNav && window.bootstrap) {
+    var closeNav = function () {
+      if (mainNav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(mainNav, { toggle: false }).hide();
+    };
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.site-header')) closeNav();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  }
+
 });

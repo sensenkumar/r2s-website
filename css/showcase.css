@@ -5,7 +5,7 @@
    Colors reuse the --navy / --gold / --cream tokens from css/style.css.
    Reference: a GSAP + ScrollTrigger + Lenis cinematic reveal pattern,
    reskinned from photography-driven car marketing to a chrome-free,
-   UI-mockup-driven hotel-software story (no video/photo assets used).
+   UI-mockup-driven hotel-software story. Photos live in assets/showcase/.
    ========================================================================== */
 
 :root {
@@ -32,7 +32,7 @@
   text-transform: uppercase;
   color: #fff;
 }
-.sc-display--hero { font-size: clamp(2.6rem, 8vw, 6.4rem); }
+.sc-display--hero { font-size: clamp(1.9rem, 8vw, 6.4rem); }
 .sc-display .sc-line { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.05em; }
 .sc-display em {
   font-family: var(--font-serif);
@@ -306,6 +306,17 @@
   transition: transform .5s var(--sc-ease), border-color .5s var(--sc-ease);
 }
 .sc-slab:hover .sc-slab-mock { transform: translateY(-4px); border-color: rgba(201,162,75,.4); }
+.sc-slab-mock > * { position: relative; z-index: 1; }
+.sc-slab-mock > .sc-slab-img {
+  position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: .55; transition: opacity .5s var(--sc-ease), transform .8s var(--sc-ease);
+}
+.sc-slab-mock::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(8,21,39,.15) 0%, rgba(8,21,39,.55) 55%, rgba(8,21,39,.94) 100%);
+}
+.sc-slab:hover .sc-slab-img { opacity: .75; transform: scale(1.04); }
+.sc-slab-mock .sc-slab-icon + .sc-slab-mini-stat { margin-top: auto; }
 .sc-slab-mock .sc-slab-icon {
   width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center;
   background: rgba(201,162,75,.14); color: var(--gold); font-size: 1rem; flex: none;
@@ -358,7 +369,7 @@
 /* ══════════ 06 · OUTRO ══════════ */
 .sc-outro { position: relative; background: var(--navy-dark); }
 .sc-outro-pin { position: relative; height: 78vh; min-height: 480px; display: grid; place-items: center; overflow: hidden; padding: 0 var(--sc-gut); }
-.sc-outro-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(120% 90% at 50% 40%, var(--navy-light) 0%, var(--navy-dark) 65%, #081527 100%); will-change: transform; }
+.sc-outro-bg { position: absolute; inset: 0; z-index: 0; background: radial-gradient(120% 90% at 50% 40%, rgba(22,48,90,.72) 0%, rgba(11,26,48,.9) 65%, #081527 100%), url(../assets/showcase/outro.jpg) center / cover no-repeat, var(--navy-dark); will-change: transform; }
 .sc-outro-kicker { position: relative; z-index: 3; margin-bottom: clamp(18px,3vh,30px); font-size: .58rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); text-align: center; }
 .sc-outro-word { position: relative; z-index: 3; margin: 0; text-align: center; }
 .sc-outro-letters { display: flex; justify-content: center; flex-wrap: nowrap; font-family: var(--font-serif); font-weight: 800; font-size: clamp(2.3rem,10vw,8.4rem); line-height: .88; letter-spacing: -.005em; text-transform: uppercase; color: #fff; }
@@ -391,3 +402,24 @@
 @media (prefers-reduced-motion: reduce) {
   .sc-pre-fill, .sc-idle-bars i, .sc-scroll-cue i, .sc-grid-field, .sc-blob { animation: none !important; }
 }
+
+/* ==========================================================================
+   05 · WHO USES IT — photo cards per role
+   ========================================================================== */
+.sc-roles { position: relative; background: var(--navy); padding: clamp(60px,10vh,120px) 0; border-bottom: 1px solid var(--sc-line-soft); }
+.sc-roles .sc-sec-head { margin-bottom: clamp(28px,5vh,50px); }
+.sc-role-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: clamp(10px,1.4vw,18px); }
+.sc-role {
+  position: relative; overflow: hidden; aspect-ratio: 3/4; border-radius: 12px;
+  border: 1px solid var(--sc-line-soft); background: var(--navy-dark);
+  display: flex; align-items: flex-end;
+}
+.sc-role img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--sc-ease); }
+.sc-role::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,21,39,0) 35%, rgba(8,21,39,.92) 100%); }
+.sc-role:hover img { transform: scale(1.05); }
+.sc-role-body { position: relative; z-index: 1; padding: 1rem; display: flex; flex-direction: column; gap: 4px; }
+.sc-role-body b { font-size: .66rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+.sc-role-body span { font-size: .82rem; line-height: 1.45; color: rgba(255,255,255,.86); }
+@media (max-width: 1100px) { .sc-role-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 700px)  { .sc-role-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .sc-role { aspect-ratio: 4/5; } }
+@media (max-width: 420px)  { .sc-role-grid { grid-template-columns: 1fr; } .sc-role { aspect-ratio: 16/10; } }
